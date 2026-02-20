@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Canvas Draw - 28x28</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>MNIST Canvas Draw - 28x28</h1>
+    
+    <div class="description">
+        <h2>📚  Inteligência Artificial </h2>
+        <p><strong>IFSULDEMINAS - Campus Machado</strong></p>
+        <p>
+            Esta ferramenta foi desenvolvida para fins didáticos, permitindo a visualização prática de como 
+            imagens são representadas numericamente em Redes Neurais. O canvas 28x28 pixels replica o formato 
+            do famoso dataset MNIST, utilizado para treinar modelos de reconhecimento de dígitos manuscritos.
+        </p>
+
+    </div>
+    
+    <div class="container">
+        <div class="canvas-section">
+            <h2>Desenhe aqui</h2>
+            <canvas id="drawCanvas" width="28" height="28"></canvas>
+            <div class="brush-size">
+                <label>Tamanho do pincel:</label>
+                <input type="range" id="brushSize" min="1" max="5" value="2">
+                <span id="brushValue">2</span>
+            </div>
+            <div class="controls">
+                <button class="clear" onclick="clearCanvas()">Limpar</button>
+                <button onclick="updatePixelDisplay()">Atualizar Pixels</button>
+                <button onclick="saveToTxt()">Salvar TXT</button>
+            </div>
+            <div class="info">
+                Desenhe com o mouse ou toque na tela
+            </div>
+        </div>
+
+        <div class="pixels-section">
+            <h2>Valores dos Pixels (0-255)</h2>
+            <div id="pixelBox"></div>
+            <div class="info">
+                0 = vazio, 1-255 = desenhado
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
